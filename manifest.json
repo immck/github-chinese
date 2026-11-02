@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub / Reddit 汉化",
+  "version": "1.2.0",
+  "description": "GitHub 完整词库汉化与 Reddit 常用界面汉化，本地运行。",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*",
+        "https://gist.github.com/*",
+        "https://skills.github.com/*",
+        "https://education.github.com/*",
+        "https://www.githubstatus.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.reddit.com/*",
+        "https://reddit.com/*",
+        "https://old.reddit.com/*"
+      ],
+      "js": [
+        "reddit.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "GitHub / Reddit 汉化",
+    "default_popup": "popup.html"
+  }
+}
